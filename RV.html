@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Cidade VR</title>
+
+<script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+
+<style>
+body{
+margin:0;
+}
+</style>
+
+</head>
+
+<body>
+
+<a-scene>
+
+    // position = x y z 
+
+<!-- iluminação -->
+<a-light type="ambient" intensity="0.9"></a-light>
+<a-light type="directional" position="20 30 10" intensity="1"></a-light>
+
+<!-- céu -->
+<a-sky color="#cfe8f3"></a-sky>
+
+<!-- GRAMA GERAL -->
+<<<<<<< Updated upstream
+<a-plane rotation="-90 0 0" position="0 0.001 0" width="500" height="500" color="#5f8f6f"></a-plane>
+=======
+<a-plane rotation="-90 0 0" width="150" height="150" color="#5f8f6f"></a-plane>
+>>>>>>> Stashed changes
+
+<!-- RUA --> 
+ //horizontal
+<a-box rotation="-90 0 0" position="0 0.1 0" width="120" height="10" depth="0.1"  color="#4f4f4f"></a-box>
+<a-box rotation="-90 0 0" position="0 0.2 0" width="120" height="0.2" depth="0.1"  color="#d1b30c"></a-box>
+ //vertical
+<a-box rotation="-90 0 0" position="0 0.1 0" width="10" height="120" depth="0.1" color="#4f4f4f"></a-box>
+<a-box rotation="-90 0 0" position="0 0.2 0" width="0.2" height="120" depth="0.1" color="#d1b30c"></a-box>
+//rotatoria
+<a-circle rotation="-90 0 0" position="0 0.3 0" radius="25" color="#4f4f4f"></a-circle>
+
+
+<!-- CALÇADAS -->
+<a-plane rotation="-90 0 0" position="0 0.05 0" width="80" height="80" color="#b0b0ae"></a-plane>
+<a-circle rotation="-90 0 0" position="0 0.5 0" radius="12" color="#3b0b0ae"></a-circle>
+
+<!-- PRAÇA CENTRAL -->
+<a-circle rotation="-90 0 0" position="0 0.4 0" radius="20" color="#5f8f6f"></a-circle>
+
+<!-- FONTE -->
+<a-cylinder position="0 0.4 0" radius="4" height="0.8" color="#bfbfbf"></a-cylinder>
+
+<a-cylinder position="0 1.3 0" radius="0.6" height="1.8" color="#a6a6a6"></a-cylinder>
+
+<a-sphere position="0 3 0" radius="0.5" color="#7fb3d5"></a-sphere>
+
+<!-- BANCOS -->
+
+<a-box position="6 0.5 6" width="3" height="0.3" depth="1" color="#6e6e6e"></a-box>
+<a-box position="6 1 5.5" width="3" height="1" depth="0.2" color="#6e6e6e"></a-box>
+
+<a-box position="-6 0.5 6" width="3" height="0.3" depth="1" color="#6e6e6e"></a-box>
+<a-box position="-6 1 5.5" width="3" height="1" depth="0.2" color="#6e6e6e"></a-box>
+
+<a-box position="6 0.5 -6" width="3" height="0.3" depth="1" color="#6e6e6e"></a-box>
+<a-box position="6 1 -6.5" width="3" height="1" depth="0.2" color="#6e6e6e"></a-box>
+
+<a-box position="-6 0.5 -6" width="3" height="0.3" depth="1" color="#6e6e6e"></a-box>
+<a-box position="-6 1 -6.5" width="3" height="1" depth="0.2" color="#6e6e6e"></a-box>
+
+<!-- ÁRVORES -->
+
+<a-cylinder position="12 2 -12" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="12 5 -12" radius="2.5" color="#3f704d"></a-sphere>
+
+<a-cylinder position="-12 2 -12" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="-12 5 -12" radius="2.5" color="#3f704d"></a-sphere>
+
+<a-cylinder position="12 2 12" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="12 5 12" radius="2.5" color="#3f704d"></a-sphere>
+
+<a-cylinder position="-12 2 12" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="-12 5 12" radius="2.5" color="#3f704d"></a-sphere>
+
+<a-cylinder position="0 2 -15" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="0 5 -15" radius="2.5" color="#3f704d"></a-sphere>
+
+<a-cylinder position="0 2 15" radius="0.4" height="4" color="#8c5a3c"></a-cylinder>
+<a-sphere position="0 5 15" radius="2.5" color="#3f704d"></a-sphere>
+
+<!-- POSTES -->
+
+<a-cylinder position="10 2 0" radius="0.1" height="4" color="#777"></a-cylinder>
+<a-sphere position="10 4.3 0" radius="0.3" color="#ffffff"></a-sphere>
+
+<a-cylinder position="-10 2 0" radius="0.1" height="4" color="#777"></a-cylinder>
+<a-sphere position="-10 4.3 0" radius="0.3" color="#ffffff"></a-sphere>
+
+<a-cylinder position="0 2 10" radius="0.1" height="4" color="#777"></a-cylinder>
+<a-sphere position="0 4.3 10" radius="0.3" color="#ffffff"></a-sphere>
+
+<a-cylinder position="0 2 -10" radius="0.1" height="4" color="#777"></a-cylinder>
+<a-sphere position="0 4.3 -10" radius="0.3" color="#ffffff"></a-sphere>
+
+<!-- ===== PRÉDIO 1 ===== -->
+<a-entity position="30 0 30">
+  <a-box width="12" height="1" depth="12" color="#2c3e50"></a-box>
+
+  <!-- estrutura -->
+  <a-box position="0 10 0" width="12" height="20" depth="12" color="#5d6d7e"></a-box>
+
+  <!-- topo -->
+  <a-box position="0 20.5 0" width="13" height="1" depth="13" color="#34495e"></a-box>
+
+  <!-- janelas frente -->
+  <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <a-box position="-4 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="4 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <a-box position="-4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- janelas trás -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- lados -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+</a-entity>
+
+<!-- ===== PRÉDIO 2 ===== -->
+<a-entity position="-30 0 30">
+
+  <a-box width="14" height="1" depth="14" color="#2c3e50"></a-box>
+  <a-box position="0 12 0" width="14" height="24" depth="14" color="#6e7f8d"></a-box>
+  <a-box position="0 24.5 0" width="15" height="1" depth="15" color="#34495e"></a-box>
+
+  <!-- JANELAS EM TODOS OS LADOS -->
+  <a-entity>
+    <!-- frente -->
+    <a-box position="-5 6 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 12 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="5 18 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+    <!-- trás -->
+    <a-entity rotation="0 180 0">
+      <a-box position="-5 6 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+      <a-box position="0 12 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+      <a-box position="5 18 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    </a-entity>
+
+    <!-- lados -->
+    <a-entity rotation="0 90 0">
+      <a-box position="0 6 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+      <a-box position="0 12 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+      <a-box position="0 18 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    </a-entity>
+
+    <a-entity rotation="0 -90 0">
+      <a-box position="0 6 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+      <a-box position="0 12 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+      <a-box position="0 18 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    </a-entity>
+  </a-entity>
+
+</a-entity>
+
+<!-- ===== PRÉDIO 3 ===== -->
+<a-entity position="30 0 -30">
+
+  <a-box width="16" height="1" depth="16" color="#2c3e50"></a-box>
+  <a-box position="0 15 0" width="16" height="30" depth="16" color="#7b8a8b"></a-box>
+  <a-box position="0 30.5 0" width="17" height="1" depth="17" color="#34495e"></a-box>
+
+  <!-- JANELAS TODOS LADOS -->
+  <a-box position="-6 8 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 15 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="6 22 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+
+  <a-entity rotation="0 180 0">
+    <a-box position="-6 8 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 15 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="6 22 8.1" width="2" height="2" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 90 0">
+    <a-box position="0 8 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 22 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 8 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 22 8.1" width="2" height="2" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<!-- ===== PRÉDIO 4 ===== -->
+<a-entity position="-30 0 -30">
+
+  <a-box width="10" height="1" depth="10" color="#2c3e50"></a-box>
+  <a-box position="0 8 0" width="10" height="16" depth="10" color="#5d6d7e"></a-box>
+  <a-box position="0 16.5 0" width="11" height="1" depth="11" color="#34495e"></a-box>
+
+  <!-- FRENTE -->
+  <a-box position="-3 4 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 8 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="3 12 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- TRÁS -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-3 4 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 8 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="3 12 5.1" width="1.2" height="1.2" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- LADOS -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 4 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 8 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 12 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 4 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 8 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 12 5.1" width="1.2" height="1.2" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+<!-- ===== PRÉDIO 5 ===== -->
+<a-entity position="46 0 13">
+
+  <a-box width="14" height="1" depth="14" color="#2c3e50"></a-box>
+  <a-box position="0 14 0" width="14" height="28" depth="14" color="#626567"></a-box>
+  <a-box position="0 28.5 0" width="15" height="1" depth="15" color="#34495e"></a-box>
+
+  <!-- FRENTE -->
+  <a-box position="-5 7 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="5 21 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- TRÁS -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-5 7 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="5 21 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- LADOS -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 7 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 21 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 7 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 21 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<!-- ===== PRÉDIO 6 ===== -->
+<a-entity position="-46 0 -13">
+
+  <a-box width="14" height="1" depth="14" color="#2c3e50"></a-box>
+  <a-box position="0 14 0" width="14" height="28" depth="14" color="#626567"></a-box>
+  <a-box position="0 28.5 0" width="15" height="1" depth="15" color="#34495e"></a-box>
+
+  <!-- FRENTE -->
+  <a-box position="-5 7 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="5 21 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- TRÁS -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-5 7 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="5 21 7.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- LADOS -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 7 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 21 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 7 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 14 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 21 7.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+<!-- ===== PRÉDIO 7 ===== -->
+<a-entity position="46 0 -13">
+
+  <a-box width="12" height="1" depth="12" color="#2c3e50"></a-box>
+  <a-box position="0 10 0" width="12" height="20" depth="12" color="#707b7c"></a-box>
+  <a-box position="0 20.5 0" width="13" height="1" depth="13" color="#34495e"></a-box>
+
+  <!-- FRENTE -->
+  <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- TRÁS -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- LADOS -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<!-- ===== PRÉDIO 8 ===== -->
+<a-entity position="-45 0 13">
+
+  <a-box width="12" height="1" depth="12" color="#2c3e50"></a-box>
+  <a-box position="0 10 0" width="12" height="20" depth="12" color="#707b7c"></a-box>
+  <a-box position="0 20.5 0" width="13" height="1" depth="13" color="#34495e"></a-box>
+
+  <!-- FRENTE -->
+  <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+
+  <!-- TRÁS -->
+  <a-entity rotation="0 180 0">
+    <a-box position="-4 5 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+    <a-box position="4 15 6.1" width="1.5" height="1.5" depth="0.1" color="#85c1e9"></a-box>
+  </a-entity>
+
+  <!-- LADOS -->
+  <a-entity rotation="0 90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+  <a-entity rotation="0 -90 0">
+    <a-box position="0 5 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 10 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+    <a-box position="0 15 6.1" width="1.5" height="1.5" depth="0.1" color="#aed6f1"></a-box>
+  </a-entity>
+
+</a-entity>
+
+<<<<<<< Updated upstream
+<!-- PESSOAS  -->
+
+<!-- (PESSOA 1 - fumando) -->
+<a-entity position="8 0 8">
+
+  <a-cylinder position="0 1.5 0" radius="0.5" height="3" color="#2c3e50"></a-cylinder>
+  <a-cylinder position="0 3 0" radius="0.2" height="0.3" color="#c68642"></a-cylinder>
+  <a-sphere position="0 3.6 0" radius="0.5" color="#c68642"></a-sphere>
+  <a-sphere position="0 3.9 0" radius="0.55" color="#2c1b10" scale="1 0.6 1"></a-sphere>
+
+  <a-cylinder position="-0.2 0.4 0" radius="0.2" height="1.2" color="#111"></a-cylinder>
+  <a-cylinder position="0.2 0.4 0" radius="0.2" height="1.2" color="#111"></a-cylinder>
+
+  <a-cylinder position="-0.8 2.2 0" radius="0.15" height="1.5" rotation="0 0 40" color="#c68642"></a-cylinder>
+  <a-cylinder position="0.8 2.4 0" radius="0.15" height="1.5" rotation="0 0 -60" color="#c68642"></a-cylinder>
+
+  <!-- cigarro -->
+  <a-cylinder position="1 3.2 0.1" radius="0.05" height="0.5" rotation="0 0 90" color="#fff"></a-cylinder>
+  <a-sphere position="1.25 3.2 0.1" radius="0.06" color="#ff6600"></a-sphere>
+
+  <!-- fumaça -->
+  <a-sphere position="1.3 3.7 0.1" radius="0.12" color="#ccc" opacity="0.6"
+  animation="property: position; to: 1.3 5 0.1; dur: 2000; loop: true"></a-sphere>
+
+</a-entity>
+
+
+<!--(PESSOA 2 - rua) -->
+<a-entity position="-15 0 5">
+
+  <a-cylinder position="0 1.5 0" radius="0.5" height="3" color="#8e44ad"></a-cylinder>
+  <a-cylinder position="0 3 0" radius="0.2" height="0.3" color="#f1c27d"></a-cylinder>
+  <a-sphere position="0 3.6 0" radius="0.5" color="#f1c27d"></a-sphere>
+  <a-sphere position="0 3.9 0" radius="0.55" color="#3b2f2f" scale="1 0.6 1"></a-sphere>
+
+  <a-cylinder position="-0.2 0.4 0" radius="0.2" height="1.2" color="#222"></a-cylinder>
+  <a-cylinder position="0.2 0.4 0" radius="0.2" height="1.2" color="#222"></a-cylinder>
+
+  <a-cylinder position="-0.8 2.2 0" radius="0.15" height="1.5" rotation="0 0 30" color="#f1c27d"></a-cylinder>
+  <a-cylinder position="0.8 2.2 0" radius="0.15" height="1.5" rotation="0 0 -30" color="#f1c27d"></a-cylinder>
+
+</a-entity>
+
+
+<!-- (PESSOA 3 - prédios) -->
+<a-entity position="20 0 -20">
+
+  <a-cylinder position="0 1.5 0" radius="0.5" height="3" color="#16a085"></a-cylinder>
+  <a-cylinder position="0 3 0" radius="0.2" height="0.3" color="#5a3b2e"></a-cylinder>
+  <a-sphere position="0 3.6 0" radius="0.5" color="#5a3b2e"></a-sphere>
+  <a-sphere position="0 4 0" radius="0.6" color="#111"></a-sphere>
+
+  <a-cylinder position="-0.2 0.4 0" radius="0.2" height="1.2" color="#000"></a-cylinder>
+  <a-cylinder position="0.2 0.4 0" radius="0.2" height="1.2" color="#000"></a-cylinder>
+
+</a-entity>
+
+
+<!--FAMÍLIA PIQUENIQUE-->
+
+<a-entity position="-12 0 -12">
+
+  <!--TOALHA-->
+  <a-plane rotation="-90 0 0" position="0 0.02 0" width="8" height="8" color="#ff6666"></a-plane>
+
+  <!--CESTA-->
+  <a-box position="0 0.4 -2" width="1" height="0.8" depth="0.8" color="#8c5a3c"></a-box>
+
+  <!--COMIDA-->
+  <a-sphere position="1 0.2 -1" radius="0.2" color="#ffcc00"></a-sphere>
+  <a-sphere position="-1 0.2 -1" radius="0.2" color="#ff0000"></a-sphere>
+  <a-cylinder position="0 0.2 -1.5" radius="0.2" height="0.2" color="#2ecc71"></a-cylinder>
+
+  <!-- PAI -->
+  <a-entity position="-2 0.2 0">
+    <a-cylinder position="0 0.2 0" radius="0.35" height="0.4" color="#3498db"></a-cylinder>
+    <a-sphere position="0 0.7 0" radius="0.35" color="#c68642"></a-sphere>
+    <a-sphere position="0 0.9 0" radius="0.4" color="#2c1b10" scale="1 0.5 1"></a-sphere>
+  </a-entity>
+
+  <!-- MÃE -->
+  <a-entity position="2 0.2 0">
+    <a-cylinder position="0 0.2 0" radius="0.35" height="0.4" color="#e74c3c"></a-cylinder>
+    <a-sphere position="0 0.7 0" radius="0.35" color="#f1c27d"></a-sphere>
+    <a-sphere position="0 0.9 0" radius="0.4" color="#3b2f2f" scale="1 0.5 1"></a-sphere>
+  </a-entity>
+
+  <!-- FILHO 1 -->
+  <a-entity position="-1 0.15 2">
+    <a-cylinder position="0 0.15 0" radius="0.25" height="0.3" color="#2ecc71"></a-cylinder>
+    <a-sphere position="0 0.5 0" radius="0.25" color="#d9a066"></a-sphere>
+  </a-entity>
+
+  <!-- FILHO 2 -->
+  <a-entity position="1 0.15 2">
+    <a-cylinder position="0 0.15 0" radius="0.25" height="0.3" color="#9b59b6"></a-cylinder>
+    <a-sphere position="0 0.5 0" radius="0.25" color="#5a3b2e"></a-sphere>
+  </a-entity>
+
+</a-entity>
+
+
+<!--HOMEM PASSEANDO COM CACHORRO-->
+
+<a-entity position="15 0 10"
+
+animation="property: position; 
+to: -15 0 10; 
+dur: 8000; 
+dir: alternate; 
+loop: true;
+easing: linear">
+
+  <!--homem-->
+  <a-cylinder position="0 1.5 0" radius="0.5" height="3" color="#2980b9"></a-cylinder>
+  <a-sphere position="0 3.6 0" radius="0.5" color="#d9a066"></a-sphere>
+
+  <!--pernas-->
+  <a-cylinder position="-0.2 0.4 0" radius="0.2" height="1.2" color="#222"></a-cylinder>
+  <a-cylinder position="0.2 0.4 0" radius="0.2" height="1.2" color="#222"></a-cylinder>
+
+  <!--braço-->
+  <a-cylinder position="0.8 2.2 0" radius="0.15" height="1.5" rotation="0 0 -40" color="#d9a066"></a-cylinder>
+
+  <!--guia-->
+  <a-cylinder position="1.5 1.5 0" radius="0.03" height="2" rotation="0 0 90" color="#000"></a-cylinder>
+
+  <!--cachorro-->
+  <a-entity position="2.5 0 0">
+
+    <a-box position="0 0.5 0" width="1.2" height="0.6" depth="0.5" color="#8c5a3c"></a-box>
+
+    <a-box position="0.8 0.7 0" width="0.6" height="0.5" depth="0.5" color="#8c5a3c"></a-box>
+
+    <a-box position="0.9 1 0.2" width="0.2" height="0.3" depth="0.1" color="#5a3b2e"></a-box>
+    <a-box position="0.9 1 -0.2" width="0.2" height="0.3" depth="0.1" color="#5a3b2e"></a-box>
+
+    <a-cylinder position="-0.3 0.2 0.2" radius="0.1" height="0.4" color="#5a3b2e"></a-cylinder>
+    <a-cylinder position="-0.3 0.2 -0.2" radius="0.1" height="0.4" color="#5a3b2e"></a-cylinder>
+    <a-cylinder position="0.4 0.2 0.2" radius="0.1" height="0.4" color="#5a3b2e"></a-cylinder>
+    <a-cylinder position="0.4 0.2 -0.2" radius="0.1" height="0.4" color="#5a3b2e"></a-cylinder>
+
+    <a-cylinder position="-0.8 0.7 0" radius="0.05" height="0.8" rotation="0 0 45" color="#5a3b2e"></a-cylinder>
+
+  </a-entity>
+
+</a-entity>
+=======
+>>>>>>> Stashed changes
+
+<!-- JOGADOR -->
+
+<a-entity position="0 20 25">
+
+<a-camera 
+  wasd-controls="acceleration: 70; fly: true" 
+  look-controls="pointerLockEnabled: true">
+</a-camera>
+
+</a-entity>
+
+</a-scene>
+
+</body>
+</html>
